@@ -71,7 +71,7 @@ function createDeck () {
 }
 
 function shuffleDeck () {
-  for (i = 0; i < deck.length; i++) {
+  for (let i = 0; i < deck.length; i++) {
     const swapIdx = Math.trunc(Math.random() * deck.length)
     const tmp = deck[swapIdx]
     deck[swapIdx] = deck[i]
@@ -161,39 +161,30 @@ function showStatus () {
   if (!gameStarted) {
     textArea.innerText = 'Welcome to Blackjack'
   }
-}
 
-let dealerCardString = ''
-for (let i = 0; i < dealerCards.length; i++) {
-  dealerCardString += getCardString(dealerCards[i]) + '\n'
-}
-let playerCardString = ''
-for (let i = 0; i < playerCards.length; i++) {
-  playerCardString += getCardString(playerCards[i]) + '\n'
-}
-updateScores()
+  let dealerCardString = ''
+  for (let i = 0; i < dealerCards.length; i++) {
+    dealerCardString += getCardString(dealerCards[i]) + '\n'
+  }
+  let playerCardString = ''
+  for (let i = 0; i < playerCards.length; i++) {
+    playerCardString += getCardString(playerCards[i]) + '\n'
+  }
+  updateScores()
 
-textArea.innerText = 'Dealer has:\n' + dealerCardString + '(score: ' + dealerScore + ')\n\n' +
+  textArea.innerText = 'Dealer has:\n' + dealerCardString + '(score: ' + dealerScore + ')\n\n' +
  'Player has:\n' + playerCardString + '(score: ' + playerScore + ')\n\n'
 
-if (gameOver) {
-  if (playerWon) {
-    textArea.innerText += 'YOU WIN!'
-  } else {
-    textArea.innerText += 'DEALER WINS!'
+  if (gameOver) {
+    if (playerWon) {
+      textArea.innerText += 'YOU WIN!'
+    } else {
+      textArea.innerText += 'DEALER WINS!'
+    }
+    newGameButton.style.display = 'inline'
+    hitButton.style.display = 'none'
+    stayButton.style.display = 'none'
   }
-  newGameButton.style.display = 'inline'
-  hitButton.style.display = 'none'
-  stayButton.style.display = 'none'
+
+  playerCards = [getNextCard(), getNextCard()]
 }
-
-for (var i = 0; i < deck.length; i++) {
-  textArea.innerText += '\n' + getCardString(deck[i])
-}
-
-for (let i = 0; i < deck.length; i++) {
-  console.log(deck[i])
-}
-
-playerCards = [getNextCard(), getNextCard()]
-
