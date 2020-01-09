@@ -22,13 +22,12 @@ game BlackJack in JS
 
 ---
 
-In this project I learned basics of javascript. Storing information in variables, Types variables and arrays, looping with for and while, some basic functions and objects.
+In this project I learned basics of javascript: Storing information in variables, Types variables and arrays, looping with for and while, some basic functions and objects.
 
 ---
 ## Technologies
 * html
 * javascript
-* visual studio code
 ---
 ## Setup
 Clone this repo to your desktop and run npm install, after that you can use to built in webserver to launch the page localy (run http server in the console).
