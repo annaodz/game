@@ -30,7 +30,7 @@ In this project I learned basics of javascript: Storing information in variables
 * javascript
 ---
 ## Setup
-Clone this repo to your desktop and run npm install, after that you can use to built in webserver to launch the page localy (run http server in the console).
+Clone this repo to your desktop and run npm install, after that run http server in the console.
 
 ---
 ## Contact
